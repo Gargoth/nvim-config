@@ -21,7 +21,7 @@ let g:mkdp_command_for_global = 0
 " set to 1, preview server available to others in your network
 " by default, the server listens on localhost (127.0.0.1)
 " default: 0
-let g:mkdp_open_to_the_world = 0
+let g:mkdp_open_to_the_world = 1
 
 " use custom IP to open preview page
 " useful when you work in remote vim and preview on local browser
@@ -31,7 +31,7 @@ let g:mkdp_open_ip = ''
 
 " specify browser to open preview page
 " default: ''
-let g:mkdp_browser = 'firedragon'
+let g:mkdp_browser = 'vivaldi'
 
 " set to 1, echo preview page url in command line when open preview page
 " default is 0

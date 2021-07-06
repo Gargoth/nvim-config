@@ -1,3 +1,4 @@
+filetype plugin on
 let g:polyglot_disabled = ['autoindent']
 
 call plug#begin('~/.vim/plugged')
@@ -8,6 +9,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 Plug 'vim-airline/vim-airline'
