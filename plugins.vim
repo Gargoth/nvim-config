@@ -27,6 +27,10 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'shaunsingh/nord.nvim'
 call plug#end()
 
+" Mappings
+nnoremap <C-p> <cmd>Telescope git_files<cr>
+nnoremap <C-b> <cmd>NERDTreeToggle<cr>
+
 " Set colorscheme
 set background=dark
 let g:one_allow_italics = 1
