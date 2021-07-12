@@ -27,7 +27,7 @@ set encoding=utf8
 
 " Mappings
 let mapleader=" "
-nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-p> <cmd>Telescope git_files<cr>
 nnoremap <C-b> <cmd>NERDTreeToggle<cr>
 "" Copy entire file to clipboard
 nnoremap <leader>cc ggVG"+y

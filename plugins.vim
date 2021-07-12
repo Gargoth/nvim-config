@@ -3,6 +3,8 @@ let g:polyglot_disabled = ['autoindent']
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" :CocInstall coc-marketplace coc-pyright coc-discord-rpc coc-html coc-html-css-support coc-git coc-emmet coc-tsserver coc-json coc-clangd
+
 Plug 'sheerun/vim-polyglot'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -11,6 +13,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'tpope/vim-commentary'
+Plug 'Yggdroot/indentLine'
+Plug 'mattn/emmet-vim'
 
 Plug 'vim-airline/vim-airline'
 
@@ -29,7 +34,5 @@ colorscheme one
 let g:airline_theme='one'
 set termguicolors
 
-source ~/.config/nvim/markdownconfig.vim
-
-" Set telescope to ignore node_modules
-lua << EOF require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules"} } }
+" Add :Prettier to commands
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
