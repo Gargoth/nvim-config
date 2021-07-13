@@ -29,6 +29,8 @@ call plug#end()
 
 " Mappings
 nnoremap <C-p> <cmd>Telescope git_files<cr>
+nnoremap <C-f> <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <C-,> <cmd>lua require'telescope.builtin'.find_files({ cwd = vim.fn.stdpath('config') })<CR>
 nnoremap <C-b> <cmd>NERDTreeToggle<cr>
 
 " Set colorscheme
