@@ -31,6 +31,9 @@ colorscheme one
 let g:airline_theme='one'
 set termguicolors
 
+" Treesitter config
+autocmd VimEnter * TSEnable highlight
+
 " Telescope config
 lua <<EOF
 require'telescope'.setup {
