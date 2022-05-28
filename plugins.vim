@@ -31,6 +31,14 @@ colorscheme one
 let g:airline_theme='one'
 set termguicolors
 
+" Treesitter config
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+
 " Telescope config
 lua <<EOF
 require'telescope'.setup {
