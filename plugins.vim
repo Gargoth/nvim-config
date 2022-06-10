@@ -1,21 +1,25 @@
 filetype plugin on
 
 call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'MunifTanjim/prettier.nvim'
 Plug 'dense-analysis/ale'
 
+Plug 'kyazdani42/nvim-web-devicons'
+
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
+
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
 Plug 'tpope/vim-commentary'
+
 Plug 'Yggdroot/indentLine'
-Plug 'mattn/emmet-vim'
 Plug 'psliwka/vim-smoothie'
 
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
@@ -48,6 +52,10 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+" ALE config
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
 
 " Telescope config
 lua << EOF
