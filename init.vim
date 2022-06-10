@@ -28,8 +28,8 @@ set encoding=utf8
 " Mappings
 let mapleader=" "
 "" Copy entire file to clipboard
-nnoremap <leader>yy :'<,'>w !clip.exe<CR>
-nnoremap <leader>cc :w !clip.exe<CR>
+nnoremap <leader>y :'<,'>w !clip.exe<CR>
+nnoremap <leader>c :w !clip.exe<CR>
 "" Switch between splits with alt+movement
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
