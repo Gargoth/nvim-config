@@ -34,7 +34,7 @@ nnoremap <C-b> <cmd>NERDTreeToggle<cr>
 nnoremap <Leader>f <Plug>(prettier-format)
 nnoremap <Leader>r <cmd>CocCommand document.renameCurrentWord<cr>
 
-" Set colorscheme
+" Set Appearance
 set background=dark
 let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
 colorscheme catppuccin
@@ -44,6 +44,10 @@ require("feline").setup({
 	components = require('catppuccin.core.integrations.feline'),
 })
 EOF
+
+" IndentLine config
+let g:vim_json_conceal=0
+let g:markdown_syntax_conceal=0
 
 " Treesitter config
 lua << EOF
