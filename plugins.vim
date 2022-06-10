@@ -46,8 +46,8 @@ require("feline").setup({
 EOF
 
 " IndentLine config
-let g:vim_json_conceal=0
-let g:markdown_syntax_conceal=0
+autocmd BufEnter *.md,*.json set conceallevel=0
+autocmd BufLeave *.md,*.json set conceallevel=2
 
 " Treesitter config
 lua << EOF
