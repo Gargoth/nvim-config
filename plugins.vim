@@ -54,8 +54,7 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 " ALE config
-let g:ale_completion_enabled = 1
-set omnifunc=ale#completion#OmniFunc
+let g:ale_disable_lsp = 1
 
 " Telescope config
 lua << EOF
