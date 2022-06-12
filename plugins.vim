@@ -46,6 +46,9 @@ require("feline").setup({
 EOF
 
 " IndentLine config
+lua << EOF
+vim.notify = require("notify")
+EOF
 autocmd BufEnter *.md,*.json set conceallevel=0
 autocmd BufLeave *.md,*.json set conceallevel=2
 
@@ -74,7 +77,6 @@ EOF
 
 " Integrate coc.nvim with nvim-notify
 lua << EOF
-vim.notify = require("notify")
 local coc_status_record = {}
 
 function coc_status_notify(msg, level)
