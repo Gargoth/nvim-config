@@ -20,7 +20,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'tpope/vim-commentary'
 
-Plug 'Yggdroot/indentLine'
 Plug 'psliwka/vim-smoothie'
 
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
@@ -45,13 +44,6 @@ require("feline").setup({
 })
 EOF
 
-" IndentLine config
-lua << EOF
-vim.notify = require("notify")
-EOF
-autocmd BufEnter *.md,*.json set conceallevel=0
-autocmd BufLeave *.md,*.json set conceallevel=2
-
 " Treesitter config
 lua << EOF
 require'nvim-treesitter.configs'.setup {
@@ -64,9 +56,11 @@ EOF
 
 " ALE config
 let g:ale_disable_lsp = 1
+let g:ale_pattern_options = {'\.md$': {'ale_enabled': 0}}
 
 " Coc config
 nnoremap <silent> K :call CocActionAsync('doHover')<cr>
+nnoremap <silent> <leader>C :CocRestart<cr>
 
 " Telescope config
 lua << EOF
@@ -75,8 +69,12 @@ require'telescope'.setup {
 }
 EOF
 
+" Prettier config
+nnoremap <leader>p :Prettier<cr>
+
 " Integrate coc.nvim with nvim-notify
 lua << EOF
+vim.notify = require("notify")
 local coc_status_record = {}
 
 function coc_status_notify(msg, level)
@@ -145,7 +143,7 @@ function! s:StatusNotify() abort
 endfunction
 
 function! s:InitCoc() abort
-  execute "lua vim.notify('Initialized coc.nvim for LSP support', 'info', { title = 'LSP Status' })"
+  execute "lua vim.notify('Initialized coc.nvim for LSP support', 'info', { title = 'LSP Status' , render = 'minimal'})"
 endfunction
 
 " notifications
