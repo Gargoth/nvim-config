@@ -24,6 +24,7 @@ Plug 'psliwka/vim-smoothie'
 
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'feline-nvim/feline.nvim'
+Plug 'xiyaowong/nvim-transparent'
 call plug#end()
 
 " Mappings
@@ -37,7 +38,7 @@ nnoremap <Leader>r <cmd>CocCommand document.renameCurrentWord<cr>
 set background=dark
 let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
 colorscheme catppuccin
-
+autocmd VimEnter * TransparentEnable
 lua << EOF
 require("feline").setup({
 	components = require('catppuccin.core.integrations.feline'),
