@@ -5,7 +5,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'MunifTanjim/prettier.nvim'
-Plug 'dense-analysis/ale'
 
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -41,11 +40,6 @@ require("feline").setup({
 	components = ctp_feline.get(),
 })
 EOF
-
-" ALE config
-let g:ale_completion_enabled = 1
-let g:ale_completion_delay = 500
-let g:ale_lint_on_text_changed = "never"
 
 " Treesitter config
 lua << EOF
