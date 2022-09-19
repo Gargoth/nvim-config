@@ -2,8 +2,12 @@ filetype plugin on
 
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
+
 Plug 'MunifTanjim/prettier.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
@@ -19,6 +23,8 @@ Plug 'tpope/vim-commentary'
 
 Plug 'psliwka/vim-smoothie'
 
+Plug 'jbyuki/nabla.nvim'
+
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'feline-nvim/feline.nvim'
 call plug#end()
@@ -27,7 +33,8 @@ call plug#end()
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-f> <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <C-b> <cmd>NERDTreeToggle<cr>
-nnoremap <Leader>f <Plug>(prettier-format)
+nnoremap <a-L> :lua require("nabla").popup()<cr>
+
 
 " Set Appearance
 set background=dark
