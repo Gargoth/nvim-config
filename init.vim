@@ -41,8 +41,8 @@ nnoremap <leader>, <C-w><
 nnoremap <leader>= <C-w>+
 nnoremap <leader>- <C-w>-
 "" Tabs
-nnoremap <leader>tn :tabnew<CR>
-nnoremap <leader>tw :tabclose<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tw :tabclose<CR>
 
 " Source plugins
 source ~/.config/nvim/plugins.vim

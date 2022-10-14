@@ -23,6 +23,7 @@ Plug 'tpope/vim-commentary'
 
 Plug 'psliwka/vim-smoothie'
 
+Plug 'mracos/mermaid.vim'
 Plug 'jbyuki/nabla.nvim'
 
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
