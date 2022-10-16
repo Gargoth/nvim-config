@@ -11,19 +11,16 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'MunifTanjim/prettier.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'tpope/vim-commentary'
-
 Plug 'psliwka/vim-smoothie'
-
-Plug 'mracos/mermaid.vim'
 Plug 'jbyuki/nabla.nvim'
 
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
