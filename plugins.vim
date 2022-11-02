@@ -7,12 +7,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'MunifTanjim/prettier.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'nvim-tree/nvim-tree.lua'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -30,7 +30,7 @@ call plug#end()
 " Mappings
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-f> <cmd>Telescope current_buffer_fuzzy_find<cr>
-nnoremap <C-b> <cmd>NERDTreeToggle<cr>
+nnoremap <C-b> <cmd>NvimTreeToggle<cr>
 nnoremap <a-L> :lua require("nabla").popup()<cr>
 
 
@@ -46,6 +46,38 @@ require("feline").setup({
 })
 EOF
 
+" gitsigns config
+lua << EOF
+require('gitsigns').setup()
+EOF
+
+" nvim-tree config
+lua << EOF
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+require("nvim-tree").setup()
+EOF
+
+" Telescope config
+lua << EOF
+require('telescope').setup {
+  defaults = { file_ignore_patterns = {"node_modules", "venv", "__pycache__", ".git"} },
+}
+EOF
+
+" Prettier config
+nnoremap <leader>p :Prettier<cr>
+lua << EOF
+require("prettier").setup({
+    cli_options = {
+        bracket_spacing = true,
+        bracket_same_line = true,
+        tab_width = 4,
+        use_tabs = false,
+    },
+})
+EOF
+
 " Treesitter config
 lua << EOF
 require'nvim-treesitter.configs'.setup {
@@ -55,13 +87,3 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-
-" Telescope config
-lua << EOF
-require'telescope'.setup {
-  defaults = { file_ignore_patterns = {"node_modules", "venv", "__pycache__", ".git"} },
-}
-EOF
-
-" Prettier config
-nnoremap <leader>p :Prettier<cr>
