@@ -34,14 +34,35 @@ nnoremap <C-b> <cmd>NvimTreeToggle<cr>
 nnoremap <a-L> :lua require("nabla").popup()<cr>
 
 
-" Set Appearance
-set background=dark
-let g:catppuccin_flavour = "macchiato" " latte, frappe, macchiato, mocha
+" Catppuccin config
+lua << EOF
+require("catppuccin").setup({
+    flavour = "macchiato", -- latte, frappe, macchiato, mocha
+    background = {
+        light = "latte",
+        dark = "macchiato",
+    },
+    transparent_background = true,
+    term_colors = false,
+    dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
+    },
+    integrations = {
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        treesitter = true,
+    },
+})
+EOF
 colorscheme catppuccin
+
+" feline.nvim config
 lua << EOF
 local ctp_feline = require('catppuccin.groups.integrations.feline')
-
-require("feline").setup({
+require('feline').setup({
 	components = ctp_feline.get(),
 })
 EOF
