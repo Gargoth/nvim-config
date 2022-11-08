@@ -7,7 +7,7 @@ if has('wsl')
     nnoremap <leader>c :w !clip.exe<CR>
 else
     nnoremap <leader>y "+y
-    nnoremap <leader>c :%y+
+    nnoremap <leader>c :%y+<CR>
 endif
 
 "" Switch between splits with alt+movement
