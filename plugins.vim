@@ -7,8 +7,9 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release', 'do': ':CocInstall coc-clangd c
 
 Plug 'lewis6991/gitsigns.nvim'
 
-Plug 'MunifTanjim/prettier.nvim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'MunifTanjim/prettier.nvim'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua', { 'on': 'NERDTreeToggle' }
@@ -17,7 +18,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'jbyuki/nabla.nvim', { 'for': ['markdown', 'latex'] }
+Plug 'jbyuki/nabla.nvim', { 'for': ['markdown', 'tex'] }
 
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'tpope/vim-commentary'

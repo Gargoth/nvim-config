@@ -1,4 +1,10 @@
 {
     "typescript.showUnused": false,
-    "javascript.showUnused": false
+    "javascript.showUnused": false,
+    "languageserver": {
+        "svls": {
+            "command": "svls",
+            "filetypes": ["systemverilog"]
+        }
+    }
 }

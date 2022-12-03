@@ -1,5 +1,6 @@
 " Mappings
 let mapleader=" "
+let maplocalleader=","
 
 "" Copy  to clipboard
 if has('wsl')
