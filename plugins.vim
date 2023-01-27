@@ -35,3 +35,4 @@ source ~/.config/nvim/configs/nvim-tree.vim
 source ~/.config/nvim/configs/telescope.vim
 source ~/.config/nvim/configs/prettier.vim
 source ~/.config/nvim/configs/treesitter.vim
+source ~/.config/nvim/configs/coc.vim
