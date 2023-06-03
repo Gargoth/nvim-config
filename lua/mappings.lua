@@ -37,7 +37,6 @@ map("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format curr
 
 -- Telescope
 map("n", "<leader>p", "<cmd>Telescope find_files<CR>", { desc = "Find Files in Directory using Telescope" })
-map("n", "<leader>d", "<cmd>Telescope diagnostics<CR>", { desc = "List all diagnostics for buffers using Telescope" })
 map(
     "n",
     "<leader>f",
@@ -67,7 +66,14 @@ map("n", "K", "<cmd>Lspsaga peek_definition<CR>", { desc = "Show definition of h
 map("n", "<leader>c", "<cmd>Lspsaga code_action<CR>", { desc = "Display available code actions LspSaga" })
 map("n", "<leader>r", "<cmd>Lspsaga rename<CR>", { desc = "Rename hovered word using LspSaga" })
 map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { desc = "Show buffer outline using LspSaga" })
-map("n", "<C-d>", "<cmd>Lspsaga term_toggle<CR>", { desc = "Toggle floating terminal" })
 
 -- Trouble
 map("n", "<leader>d", "<cmd>TroubleToggle<CR>", { desc = "List all diagnostics using Trouble" })
+
+-- navbuddy
+map(
+    "n",
+    "<leader>o",
+    "<cmd>Navbuddy<CR>",
+    { desc = "Display breadcrumbs navigation floating window using nvim-navbuddy" }
+)

@@ -162,5 +162,20 @@ require("lazy").setup({
     {
         "folke/trouble.nvim",
         opts = {},
-    }
+    },
+
+    {
+        "SmiteshP/nvim-navbuddy",
+        opts = { lsp = { auto_attach = true } },
+        dependencies = {
+            "neovim/nvim-lspconfig",
+            "MunifTanjim/nui.nvim",
+            "nvim-telescope/telescope.nvim",
+            {
+                "SmiteshP/nvim-navic",
+                opts = { lsp = { auto_attach = true } },
+                dependencies = { "neovim/nvim-lspconfig" },
+            },
+        },
+    },
 })
