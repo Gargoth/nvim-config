@@ -28,10 +28,14 @@ map("n", "<A-Down>", "<cmd>resize -2<cr>", { desc = "Decrease pane height" })
 map("n", "<A-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease pane width" })
 map("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase pane width" })
 
--- Plugins
-map("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format current buffer using LSP" })
+-- Plugin Managers
 map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 map("n", "<leader>m", "<cmd>Mason<cr>", { desc = "Mason" })
+
+-- LSP
+map("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format current buffer using LSP" })
+
+-- Telescope
 map("n", "<leader>p", "<cmd>Telescope find_files<CR>", { desc = "Find Files in Directory using Telescope" })
 map(
     "n",
@@ -39,4 +43,17 @@ map(
     "<cmd>Telescope current_buffer_fuzzy_find<CR>",
     { desc = "Find Files in Directory using Telescope" }
 )
+
+-- Neotree
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Open file tree (Neotree)" })
+
+-- Harpoon
+map("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<CR>", { desc = "Add file to Harpoon marks" })
+map("n", "<leader>s", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Open Harpoon menu" })
+map("n", "<leader>j", "<cmd>lua require('harpoon.ui').nav_next()<CR>", { desc = "Navigate to next Harpoon mark" })
+map("n", "<leader>k", "<cmd>lua require('harpoon.ui').nav_prev()<CR>", { desc = "Navigate to previous Harpoon mark" })
+map("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", { desc = "Navigate to 1st Harpoon mark" })
+map("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", { desc = "Navigate to 2nd Harpoon mark" })
+map("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", { desc = "Navigate to 3rd Harpoon mark" })
+map("n", "<leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", { desc = "Navigate to 4th Harpoon mark" })
+map("n", "<leader>5", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", { desc = "Navigate to 5th Harpoon mark" })

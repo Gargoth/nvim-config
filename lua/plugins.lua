@@ -4,7 +4,7 @@ require("lazy").setup({
 
     {
         "lewis6991/gitsigns.nvim",
-        config = {},
+        opts = {},
     },
 
     {
@@ -21,13 +21,13 @@ require("lazy").setup({
 
     {
         "lukas-reineke/indent-blankline.nvim",
-        config = {},
+        opts = {},
     },
 
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-        config = {},
+        opts = {},
     },
 
     {
@@ -45,7 +45,7 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
             "nvim-lua/plenary.nvim",
         },
-        config = {
+        opts = {
             defaults = { file_ignore_patterns = { "node_modules", "venv", "__pycache__" } },
         },
     },
@@ -56,7 +56,7 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
             "catppuccin/nvim",
         },
-        config = {
+        opts = {
             theme = "catppuccin",
         },
     },
@@ -67,7 +67,7 @@ require("lazy").setup({
             "williamboman/mason.nvim",
             {
                 "williamboman/mason-lspconfig.nvim",
-                config = {},
+                opts = {},
                 dependencies = { "williamboman/mason.nvim" },
             },
         },
@@ -75,12 +75,12 @@ require("lazy").setup({
 
     {
         "jose-elias-alvarez/null-ls.nvim",
-        config = {},
+        opts = {},
     },
 
     {
         "williamboman/mason.nvim",
-        config = {},
+        opts = {},
         dependencies = {
             "mfussenegger/nvim-dap",
             "jose-elias-alvarez/null-ls.nvim",
@@ -89,7 +89,7 @@ require("lazy").setup({
 
     {
         "jay-babu/mason-null-ls.nvim",
-        config = {
+        opts = {
             automatic_setup = true,
             handlers = {},
         },
@@ -101,7 +101,7 @@ require("lazy").setup({
 
     {
         "jay-babu/mason-nvim-dap.nvim",
-        config = {},
+        opts = {},
         dependencies = {
             "williamboman/mason.nvim",
             "mfussenegger/nvim-dap",
@@ -111,7 +111,7 @@ require("lazy").setup({
     {
         "catppuccin/nvim",
         name = "catppuccin",
-        config = {
+        opts = {
             flavour = "macchiato", -- latte, frappe, macchiato, mocha
             background = {
                 light = "latte",
@@ -131,5 +131,13 @@ require("lazy").setup({
                 treesitter = true,
             },
         },
+    },
+
+    {
+        "ThePrimeagen/harpoon",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        opts = {},
     },
 })
