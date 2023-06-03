@@ -37,6 +37,8 @@ map("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<cr>", { desc = "Format curr
 
 -- Telescope
 map("n", "<leader>p", "<cmd>Telescope find_files<CR>", { desc = "Find Files in Directory using Telescope" })
+map("n", "<leader>d", "<cmd>Telescope diagnostics<CR>", { desc = "List all diagnostics for buffers using Telescope" })
+map("n", "K", "<cmd>Telescope lsp_definitions<CR>", { desc = "Go to definition of hovered word using Telescope" })
 map(
     "n",
     "<leader>f",
