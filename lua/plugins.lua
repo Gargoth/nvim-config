@@ -9,21 +9,12 @@ require("lazy").setup({
 
     {
         "folke/which-key.nvim",
-        config = {}
+        config = {},
     },
 
     {
         "lukas-reineke/indent-blankline.nvim",
         config = {},
-    },
-
-    {
-        "nvim-treesitter/nvim-treesitter",
-        config = {
-            highlight = {
-                enable = true,
-            },
-        }
     },
 
     {
@@ -38,7 +29,7 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
-        }
+        },
     },
 
     {
@@ -48,8 +39,8 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
         },
         config = {
-            defaults = { file_ignore_patterns = {"node_modules", "venv", "__pycache__"} },
-        }
+            defaults = { file_ignore_patterns = { "node_modules", "venv", "__pycache__" } },
+        },
     },
 
     {
@@ -59,8 +50,8 @@ require("lazy").setup({
             "catppuccin/nvim",
         },
         config = {
-            theme = "catppuccin"
-        }
+            theme = "catppuccin",
+        },
     },
 
     {
@@ -76,6 +67,11 @@ require("lazy").setup({
     },
 
     {
+        "jose-elias-alvarez/null-ls.nvim",
+        config = {},
+    },
+
+    {
         "williamboman/mason.nvim",
         config = {},
         dependencies = {
@@ -88,11 +84,12 @@ require("lazy").setup({
         "jay-babu/mason-null-ls.nvim",
         config = {
             automatic_setup = true,
+            handlers = {},
         },
         dependencies = {
             "williamboman/mason.nvim",
             "jose-elias-alvarez/null-ls.nvim",
-        }
+        },
     },
 
     {
@@ -101,7 +98,7 @@ require("lazy").setup({
         dependencies = {
             "williamboman/mason.nvim",
             "mfussenegger/nvim-dap",
-        }
+        },
     },
 
     {
@@ -116,22 +113,22 @@ require("lazy").setup({
             transparent_background = true,
             term_colors = false,
             dim_inactive = {
-            enabled = false,
-            shade = "dark",
-            percentage = 0.15,
+                enabled = false,
+                shade = "dark",
+                percentage = 0.15,
             },
-                integrations = {
+            integrations = {
                 gitsigns = true,
                 nvimtree = true,
                 telescope = true,
                 treesitter = true,
             },
-        }
+        },
     },
 })
 
-require("mason-lspconfig").setup_handlers {
-    function (server_name)
-        require("lspconfig")[server_name].setup {}
+require("mason-lspconfig").setup_handlers({
+    function(server_name)
+        require("lspconfig")[server_name].setup({})
     end,
-}
+})
