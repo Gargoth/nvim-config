@@ -140,4 +140,8 @@ require("lazy").setup({
         },
         opts = {},
     },
+
+    {
+        "tpope/vim-commentary",
+    },
 })

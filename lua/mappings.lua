@@ -11,9 +11,9 @@ local function map(mode, lhs, rhs, opts)
 end
 
 if vim.fn.has("wsl") then
-    map("n", "<leader>c", ":w !clip.exe<CR>", { desc = "Copy buffer contents to clipboard", silent = true })
+    map("n", "<leader>y", ":w !clip.exe<CR>", { desc = "Copy buffer contents to clipboard", silent = true })
 else
-    map("n", "<leader>c", ":%y+<CR>", { desc = "Copy buffer contents to clipboard" })
+    map("n", "<leader>y", ":%y+<CR>", { desc = "Copy buffer contents to clipboard" })
 end
 
 -- Switch pane
@@ -59,3 +59,6 @@ map("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", { desc =
 map("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", { desc = "Navigate to 3rd Harpoon mark" })
 map("n", "<leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", { desc = "Navigate to 4th Harpoon mark" })
 map("n", "<leader>5", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", { desc = "Navigate to 5th Harpoon mark" })
+
+-- Commentary
+map("n", "<leader>/", "<cmd>Commentary<CR>", { desc = "Convert lines to comments" })
