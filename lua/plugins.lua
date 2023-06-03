@@ -2,6 +2,8 @@
 require("utils/lazybootstrap")
 require("lazy").setup({
 
+    "tpope/vim-commentary",
+
     {
         "lewis6991/gitsigns.nvim",
         opts = {},
@@ -142,6 +144,23 @@ require("lazy").setup({
     },
 
     {
-        "tpope/vim-commentary",
+        "glepnir/lspsaga.nvim",
+        event = "LspAttach",
+        config = function()
+            require("lspsaga").setup({})
+        end,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
+
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = {},
+    },
+
+    {
+        "folke/trouble.nvim",
+        opts = {},
+    }
 })

@@ -9,4 +9,3 @@ vim.cmd [[colorscheme catppuccin]]
 -- TODO: Code Completions
 -- TODO: Code Actions with null.ls
 -- TODO: Todo plugin mappings
--- TODO: Comment Line mapping
