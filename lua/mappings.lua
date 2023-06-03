@@ -30,6 +30,7 @@ map("n", "<A-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase pane wid
 
 -- Plugins
 map("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
+map("n", "<leader>m", "<cmd>:Mason<cr>", { desc = "Mason" })
 map("n", "<leader>p", "<cmd>Telescope find_files<CR>", { desc = "Find Files in Directory using Telescope" })
 map("n", "<leader>f", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Find Files in Directory using Telescope" })
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Open file tree (Neotree)" })

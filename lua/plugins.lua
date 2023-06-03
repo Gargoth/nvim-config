@@ -2,33 +2,19 @@
 require("utils/lazybootstrap")
 require("lazy").setup({
 
-    "lewis6991/gitsigns.nvim",
-    "folke/which-key.nvim",
-    "lukas-reineke/indent-blankline.nvim",
+    {
+        "lewis6991/gitsigns.nvim",
+        config = {},
+    },
 
     {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        config = {
-            flavour = "macchiato", -- latte, frappe, macchiato, mocha
-            background = {
-                light = "latte",
-                dark = "macchiato",
-            },
-            transparent_background = true,
-            term_colors = false,
-            dim_inactive = {
-            enabled = false,
-            shade = "dark",
-            percentage = 0.15,
-            },
-                integrations = {
-                gitsigns = true,
-                nvimtree = true,
-                telescope = true,
-                treesitter = true,
-            },
-        }
+        "folke/which-key.nvim",
+        config = {}
+    },
+
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = {},
     },
 
     {
@@ -43,6 +29,7 @@ require("lazy").setup({
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
+        config = {},
     },
 
     {
@@ -69,10 +56,82 @@ require("lazy").setup({
         "nvim-lualine/lualine.nvim",
         dependencies = {
             "nvim-tree/nvim-web-devicons",
+            "catppuccin/nvim",
         },
         config = {
             theme = "catppuccin"
         }
-    }
+    },
 
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+            "williamboman/mason.nvim",
+            {
+                "williamboman/mason-lspconfig.nvim",
+                config = {},
+                dependencies = { "williamboman/mason.nvim" },
+            },
+        },
+    },
+
+    {
+        "williamboman/mason.nvim",
+        config = {},
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "jose-elias-alvarez/null-ls.nvim",
+        },
+    },
+
+    {
+        "jay-babu/mason-null-ls.nvim",
+        config = {
+            automatic_setup = true,
+        },
+        dependencies = {
+            "williamboman/mason.nvim",
+            "jose-elias-alvarez/null-ls.nvim",
+        }
+    },
+
+    {
+        "jay-babu/mason-nvim-dap.nvim",
+        config = {},
+        dependencies = {
+            "williamboman/mason.nvim",
+            "mfussenegger/nvim-dap",
+        }
+    },
+
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        config = {
+            flavour = "macchiato", -- latte, frappe, macchiato, mocha
+            background = {
+                light = "latte",
+                dark = "macchiato",
+            },
+            transparent_background = true,
+            term_colors = false,
+            dim_inactive = {
+            enabled = false,
+            shade = "dark",
+            percentage = 0.15,
+            },
+                integrations = {
+                gitsigns = true,
+                nvimtree = true,
+                telescope = true,
+                treesitter = true,
+            },
+        }
+    },
 })
+
+require("mason-lspconfig").setup_handlers {
+    function (server_name)
+        require("lspconfig")[server_name].setup {}
+    end,
+}
