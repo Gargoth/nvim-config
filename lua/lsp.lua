@@ -1,13 +1,10 @@
-local cmp = require('cmp')
+-- Setup for completions using nvim-cmp
+local cmp = require("cmp")
 cmp.setup({
     -- snippet = {
-        -- REQUIRED - you must specify a snippet engine
-        -- expand = function(args)
-            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        -- end,
+    -- expand = function(args)
+    -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+    -- end,
     -- },
     window = {
         completion = cmp.config.window.bordered(),
@@ -22,10 +19,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        -- { name = "vsnip" }, -- For vsnip users.
         -- { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
     }, {
         { name = "buffer" },
     }),
@@ -66,4 +60,12 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 })
 vim.diagnostic.config({
     float = { border = _border },
+})
+
+-- Treesitter config
+require("nvim-treesitter.configs").setup({
+    auto_install = true,
+    highlight = {
+        enable = true,
+    },
 })
