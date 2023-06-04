@@ -50,8 +50,6 @@ map("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Open file tree (Neotr
 -- Harpoon
 map("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<CR>", { desc = "Add file to Harpoon marks" })
 map("n", "<leader>s", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Open Harpoon menu" })
-map("n", "<leader>j", "<cmd>lua require('harpoon.ui').nav_next()<CR>", { desc = "Navigate to next Harpoon mark" })
-map("n", "<leader>k", "<cmd>lua require('harpoon.ui').nav_prev()<CR>", { desc = "Navigate to previous Harpoon mark" })
 map("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", { desc = "Navigate to 1st Harpoon mark" })
 map("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", { desc = "Navigate to 2nd Harpoon mark" })
 map("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", { desc = "Navigate to 3rd Harpoon mark" })
@@ -63,6 +61,7 @@ map("n", "<leader>/", "<cmd>Commentary<CR>", { desc = "Convert lines to comments
 
 -- LspSaga
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Show definition of hovered word using LspSaga" })
+map("n", "<leader>k", "<cmd>Lspsaga peek_definition<CR>", { desc = "Show definition of hovered word using LspSaga" })
 map("n", "<leader>c", "<cmd>Lspsaga code_action<CR>", { desc = "Display available code actions LspSaga" })
 map("n", "<leader>r", "<cmd>Lspsaga rename<CR>", { desc = "Rename hovered word using LspSaga" })
 map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { desc = "Show buffer outline using LspSaga" })
