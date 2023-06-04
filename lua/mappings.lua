@@ -62,7 +62,7 @@ map("n", "<leader>5", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", { desc =
 map("n", "<leader>/", "<cmd>Commentary<CR>", { desc = "Convert lines to comments" })
 
 -- LspSaga
-map("n", "K", "<cmd>Lspsaga peek_definition<CR>", { desc = "Show definition of hovered word using LspSaga" })
+map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Show definition of hovered word using LspSaga" })
 map("n", "<leader>c", "<cmd>Lspsaga code_action<CR>", { desc = "Display available code actions LspSaga" })
 map("n", "<leader>r", "<cmd>Lspsaga rename<CR>", { desc = "Rename hovered word using LspSaga" })
 map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { desc = "Show buffer outline using LspSaga" })
