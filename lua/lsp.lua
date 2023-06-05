@@ -1,11 +1,11 @@
 -- Setup for completions using nvim-cmp
 local cmp = require("cmp")
 cmp.setup({
-    -- snippet = {
-    -- expand = function(args)
-    -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-    -- end,
-    -- },
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+        end,
+    },
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
@@ -19,7 +19,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        -- { name = 'luasnip' }, -- For luasnip users.
+        { name = "luasnip" }, -- For luasnip users.
     }, {
         { name = "buffer" },
     }),
