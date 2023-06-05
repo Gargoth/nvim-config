@@ -2,7 +2,10 @@
 require("utils/lazybootstrap")
 require("lazy").setup({
     spec = {
-        "tpope/vim-commentary",
+
+        {
+            "tpope/vim-commentary",
+        },
 
         {
             "lewis6991/gitsigns.nvim",
@@ -124,12 +127,6 @@ require("lazy").setup({
                     dark = "macchiato",
                 },
                 transparent_background = true,
-                term_colors = false,
-                dim_inactive = {
-                    enabled = false,
-                    shade = "dark",
-                    percentage = 0.15,
-                },
                 integrations = {
                     gitsigns = true,
                     harpoon = true,

@@ -1,6 +1,8 @@
+-- Require modules
 require("options")
 require("mappings")
 require("plugins")
 require("lsp")
 
-vim.cmd [[colorscheme catppuccin]]
+-- Set colorscheme
+vim.cmd([[colorscheme catppuccin]])
