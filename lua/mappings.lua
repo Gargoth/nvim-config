@@ -16,6 +16,9 @@ else
     map("n", "<leader>y", ":%y+<CR>", { desc = "Copy buffer contents to clipboard" })
 end
 
+map("n", "<leader>w", ":set wrap linebreak<CR>", { desc = "Turn on text wrapping" })
+map("n", "<leader>W", ":set nowrap nolinebreak<CR>", { desc = "Turn off text wrapping" })
+
 -- Switch pane
 map("n", "<A-h>", "<C-w>h", { desc = "Switch to left pane" })
 map("n", "<A-j>", "<C-w>j", { desc = "Switch to lower pane" })
