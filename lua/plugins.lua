@@ -194,8 +194,8 @@ require("lazy").setup({
             "nvim-treesitter/nvim-treesitter",
             opts = {
                 ensure_install = {
-                    markdown,
-                    markdown_inline,
+                    "markdown",
+                    "markdown_inline",
                 }
             },
         },
@@ -249,7 +249,7 @@ require("lazy").setup({
                 delete_check_events = "TextChanged",
             },
         },
-        
+
         {
             "goerz/jupytext.vim"
         }
