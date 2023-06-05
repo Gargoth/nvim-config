@@ -9,6 +9,7 @@ require("lazy").setup({
 
         {
             "lewis6991/gitsigns.nvim",
+            event = { "BufReadPre", "BufNewFile" },
             opts = {},
         },
 
@@ -26,11 +27,13 @@ require("lazy").setup({
 
         {
             "lukas-reineke/indent-blankline.nvim",
+            event = { "BufReadPre", "BufNewFile" },
             opts = {},
         },
 
         {
             "folke/todo-comments.nvim",
+            event = { "BufReadPre", "BufNewFile" },
             dependencies = { "nvim-lua/plenary.nvim" },
             opts = {},
         },
@@ -46,6 +49,7 @@ require("lazy").setup({
 
         {
             "nvim-telescope/telescope.nvim",
+            cmd = "Telescope",
             dependencies = {
                 "nvim-tree/nvim-web-devicons",
                 "nvim-lua/plenary.nvim",
@@ -68,6 +72,7 @@ require("lazy").setup({
 
         {
             "neovim/nvim-lspconfig",
+            event = { "BufReadPre", "BufNewFile" },
             dependencies = {
                 "williamboman/mason.nvim",
                 {
@@ -79,11 +84,6 @@ require("lazy").setup({
         },
 
         {
-            "jose-elias-alvarez/null-ls.nvim",
-            opts = {},
-        },
-
-        {
             "williamboman/mason.nvim",
             opts = {
                 ui = {
@@ -92,7 +92,10 @@ require("lazy").setup({
             },
             dependencies = {
                 "mfussenegger/nvim-dap",
-                "jose-elias-alvarez/null-ls.nvim",
+                {
+                    "jose-elias-alvarez/null-ls.nvim",
+                    opts = {},
+                },
             },
         },
 
@@ -199,11 +202,13 @@ require("lazy").setup({
 
         {
             "folke/trouble.nvim",
+            cmd = "TroubleToggle",
             opts = {},
         },
 
         {
             "SmiteshP/nvim-navbuddy",
+            event = { "BufReadPre", "BufNewFile" },
             opts = { lsp = { auto_attach = true } },
             dependencies = {
                 "neovim/nvim-lspconfig",
