@@ -249,6 +249,10 @@ require("lazy").setup({
                 delete_check_events = "TextChanged",
             },
         },
+        
+        {
+            "goerz/jupytext.vim"
+        }
     },
 
     ui = {
