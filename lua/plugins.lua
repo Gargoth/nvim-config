@@ -34,7 +34,10 @@ require("lazy").setup({
         {
             "folke/todo-comments.nvim",
             event = { "BufReadPre", "BufNewFile" },
-            dependencies = { "nvim-lua/plenary.nvim" },
+            dependencies = {
+                "nvim-lua/plenary.nvim",
+                "nvim-telescope/telescope.nvim",
+            },
             opts = {},
         },
 
@@ -249,10 +252,6 @@ require("lazy").setup({
                 delete_check_events = "TextChanged",
             },
         },
-
-        {
-            "goerz/jupytext.vim"
-        }
     },
 
     ui = {

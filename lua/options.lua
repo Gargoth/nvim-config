@@ -19,4 +19,3 @@ opt.incsearch = true
 opt.encoding = "utf8"
 
 vim.g.markdown_fenced_languages = {'html', 'python', 'ruby', 'vim'}
-vim.g.jupytext_fmt = 'py'
