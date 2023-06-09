@@ -24,6 +24,12 @@ cmp.setup({
         { name = "buffer" },
     }),
 })
+-- Autopairs cmp setup
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)
 
 -- Automatically setup installed LSPs using mason.nvim
 require("mason-lspconfig").setup_handlers({
