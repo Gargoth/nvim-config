@@ -252,6 +252,11 @@ require("lazy").setup({
                 delete_check_events = "TextChanged",
             },
         },
+
+        {
+            'norcalli/nvim-colorizer.lua',
+            opts = {}
+        }
     },
 
     ui = {
