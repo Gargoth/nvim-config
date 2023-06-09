@@ -256,6 +256,13 @@ require("lazy").setup({
         {
             'norcalli/nvim-colorizer.lua',
             opts = {}
+        },
+
+        {
+            "gelguy/wilder.nvim",
+            opts = {
+                modes = { ':', '/', '?' }
+            }
         }
     },
 
@@ -264,3 +271,17 @@ require("lazy").setup({
         title = "Lazy"
     }
 })
+
+-- Wilder setup
+local wilder = require('wilder')
+
+wilder.set_option('renderer', wilder.renderer_mux({
+    [':'] = wilder.popupmenu_renderer({
+        highlighter = wilder.basic_highlighter(),
+        left = { ' ', wilder.popupmenu_devicons() },
+        right = { ' ', wilder.popupmenu_scrollbar() },
+    }),
+    ['/'] = wilder.wildmenu_renderer({
+        highlighter = wilder.basic_highlighter(),
+    }),
+}))
