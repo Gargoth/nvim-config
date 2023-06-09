@@ -263,6 +263,11 @@ require("lazy").setup({
             opts = {
                 modes = { ':', '/', '?' }
             }
+        },
+
+        {
+            "windwp/nvim-autopairs",
+            opts = {}
         }
     },
 
