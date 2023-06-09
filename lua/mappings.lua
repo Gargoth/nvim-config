@@ -79,3 +79,6 @@ map(
     "<cmd>Navbuddy<CR>",
     { desc = "Display breadcrumbs navigation floating window using nvim-navbuddy" }
 )
+
+-- Zenmode
+map("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle Zenmode" })

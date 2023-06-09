@@ -199,7 +199,7 @@ require("lazy").setup({
                 ensure_install = {
                     "markdown",
                     "markdown_inline",
-                }
+                },
             },
         },
 
@@ -267,6 +267,21 @@ require("lazy").setup({
 
         {
             "windwp/nvim-autopairs",
+            opts = {}
+        },
+
+        {
+            "windwp/nvim-ts-autotag",
+            dependencies = {
+                "nvim-treesitter/nvim-treesitter",
+            },
+            opts = {
+                autotag = { enable = true },
+            }
+        },
+
+        {
+            "folke/zen-mode.nvim",
             opts = {}
         }
     },
