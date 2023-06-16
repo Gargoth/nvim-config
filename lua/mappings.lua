@@ -58,9 +58,10 @@ map("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", { desc =
 map("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", { desc = "Navigate to 3rd Harpoon mark" })
 map("n", "<leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>", { desc = "Navigate to 4th Harpoon mark" })
 map("n", "<leader>5", "<cmd>lua require('harpoon.ui').nav_file(5)<CR>", { desc = "Navigate to 5th Harpoon mark" })
-
--- Commentary
-map("n", "<leader>/", "<cmd>Commentary<CR>", { desc = "Convert lines to comments" })
+map("n", "<leader>6", "<cmd>lua require('harpoon.ui').nav_file(6)<CR>", { desc = "Navigate to 6th Harpoon mark" })
+map("n", "<leader>7", "<cmd>lua require('harpoon.ui').nav_file(7)<CR>", { desc = "Navigate to 7th Harpoon mark" })
+map("n", "<leader>8", "<cmd>lua require('harpoon.ui').nav_file(8)<CR>", { desc = "Navigate to 8th Harpoon mark" })
+map("n", "<leader>9", "<cmd>lua require('harpoon.ui').nav_file(9)<CR>", { desc = "Navigate to 9th Harpoon mark" })
 
 -- LspSaga
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "Show definition of hovered word using LspSaga" })
@@ -70,7 +71,7 @@ map("n", "<leader>r", "<cmd>Lspsaga rename<CR>", { desc = "Rename hovered word u
 map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { desc = "Show buffer outline using LspSaga" })
 
 -- Trouble
-map("n", "<leader>d", "<cmd>TroubleToggle<CR>", { desc = "List all diagnostics using Trouble" })
+map("n", "<leader>t", "<cmd>TroubleToggle<CR>", { desc = "List all diagnostics using Trouble" })
 
 -- navbuddy
 map(
