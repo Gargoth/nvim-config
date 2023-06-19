@@ -8,6 +8,13 @@ require("lazy").setup({
         },
 
         {
+            "folke/neodev.nvim",
+            opts = {
+                library = { plugins = { "nvim-dap-ui" }, types = true },
+            } 
+        },
+
+        {
             "lewis6991/gitsigns.nvim",
             event = { "BufReadPre", "BufNewFile" },
             opts = {},
@@ -116,11 +123,21 @@ require("lazy").setup({
 
         {
             "jay-babu/mason-nvim-dap.nvim",
-            opts = {},
+            opts = {
+                handlers = {},
+            },
             dependencies = {
                 "williamboman/mason.nvim",
                 "mfussenegger/nvim-dap",
             },
+        },
+
+        {
+            "rcarriga/nvim-dap-ui",
+            opts = {},
+            dependencies ={
+                "mfussenegger/nvim-dap",
+            }
         },
 
         {
@@ -233,6 +250,7 @@ require("lazy").setup({
                 "hrsh7th/cmp-buffer",
                 "hrsh7th/cmp-path",
                 "saadparwaiz1/cmp_luasnip",
+                "hrsh7th/cmp-nvim-lsp-signature-help",
             },
         },
 
@@ -282,6 +300,11 @@ require("lazy").setup({
 
         {
             "folke/zen-mode.nvim",
+            opts = {}
+        },
+
+        {
+            "brenoprata10/nvim-highlight-colors",
             opts = {}
         }
     },

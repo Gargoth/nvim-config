@@ -1,4 +1,5 @@
 local opt = vim.opt
+opt.termguicolors = true
 opt.errorbells = false
 opt.tabstop = 4
 opt.softtabstop = 4

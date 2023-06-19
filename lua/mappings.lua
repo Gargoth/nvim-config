@@ -83,3 +83,8 @@ map(
 
 -- Zenmode
 map("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle Zenmode" })
+
+-- DAP
+map("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", { desc = "Start/Continue Debug" })
+map("n", "<leader>d", "<cmd>lua require'dapui'.toggle()<CR>", { desc = "Toggle DapUI" })
+map("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", { desc = "Set Breakpoint" })
