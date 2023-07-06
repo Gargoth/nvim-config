@@ -315,6 +315,9 @@ require("lazy").setup({
     }
 })
 
+-- Tresitter setup
+require 'nvim-treesitter.install'.compilers = {'clang'}
+
 -- Wilder setup
 local wilder = require('wilder')
 
