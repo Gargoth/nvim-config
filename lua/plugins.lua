@@ -8,13 +8,6 @@ require("lazy").setup({
         },
 
         {
-            "folke/neodev.nvim",
-            opts = {
-                library = { plugins = { "nvim-dap-ui" }, types = true },
-            }
-        },
-
-        {
             "lewis6991/gitsigns.nvim",
             event = { "BufReadPre", "BufNewFile" },
             opts = {},
@@ -50,6 +43,7 @@ require("lazy").setup({
 
         {
             "nvim-neo-tree/neo-tree.nvim",
+            cmd = { "Neotree", "Neotree toggle" },
             dependencies = {
                 "nvim-lua/plenary.nvim",
                 "nvim-tree/nvim-web-devicons",
@@ -89,6 +83,28 @@ require("lazy").setup({
                     "williamboman/mason-lspconfig.nvim",
                     opts = {},
                     dependencies = { "williamboman/mason.nvim" },
+                },
+                {
+                    "SmiteshP/nvim-navbuddy",
+                    opts = { lsp = { auto_attach = true } },
+                    dependencies = {
+                        "MunifTanjim/nui.nvim",
+                        "nvim-telescope/telescope.nvim",
+                        {
+                            "SmiteshP/nvim-navic",
+                            opts = { lsp = { auto_attach = true } },
+                        },
+                    },
+                },
+                {
+                    "hrsh7th/nvim-cmp",
+                    dependencies = {
+                        "hrsh7th/cmp-nvim-lsp",
+                        "hrsh7th/cmp-buffer",
+                        "hrsh7th/cmp-path",
+                        "saadparwaiz1/cmp_luasnip",
+                        "hrsh7th/cmp-nvim-lsp-signature-help",
+                    },
                 },
             },
         },
@@ -130,14 +146,6 @@ require("lazy").setup({
                 "williamboman/mason.nvim",
                 "mfussenegger/nvim-dap",
             },
-        },
-
-        {
-            "rcarriga/nvim-dap-ui",
-            opts = {},
-            dependencies = {
-                "mfussenegger/nvim-dap",
-            }
         },
 
         {
@@ -208,6 +216,7 @@ require("lazy").setup({
 
         {
             "nvim-treesitter/nvim-treesitter",
+            event = { "BufReadPre", "BufNewFile" },
             opts = {
                 ensure_install = {
                     "markdown",
@@ -220,34 +229,6 @@ require("lazy").setup({
             "folke/trouble.nvim",
             cmd = "TroubleToggle",
             opts = {},
-        },
-
-        {
-            "SmiteshP/nvim-navbuddy",
-            event = { "BufReadPre", "BufNewFile" },
-            opts = { lsp = { auto_attach = true } },
-            dependencies = {
-                "neovim/nvim-lspconfig",
-                "MunifTanjim/nui.nvim",
-                "nvim-telescope/telescope.nvim",
-                {
-                    "SmiteshP/nvim-navic",
-                    opts = { lsp = { auto_attach = true } },
-                    dependencies = { "neovim/nvim-lspconfig" },
-                },
-            },
-        },
-
-        {
-            "hrsh7th/nvim-cmp",
-            dependencies = {
-                "neovim/nvim-lspconfig",
-                "hrsh7th/cmp-nvim-lsp",
-                "hrsh7th/cmp-buffer",
-                "hrsh7th/cmp-path",
-                "saadparwaiz1/cmp_luasnip",
-                "hrsh7th/cmp-nvim-lsp-signature-help",
-            },
         },
 
         {
@@ -286,6 +267,7 @@ require("lazy").setup({
 
         {
             "windwp/nvim-ts-autotag",
+            event = { "BufReadPre", "BufNewFile" },
             dependencies = {
                 "nvim-treesitter/nvim-treesitter",
             },
@@ -301,6 +283,7 @@ require("lazy").setup({
 
         {
             "brenoprata10/nvim-highlight-colors",
+            event = { "BufReadPre", "BufNewFile" },
             opts = {}
         },
 
@@ -333,6 +316,7 @@ require("lazy").setup({
 
         {
             "LhKipp/nvim-nu",
+            event = { "BufReadPre *.nu", "BufNewFile *.nu" },
             build = ":TSInstall nu",
             opts = {},
         },
