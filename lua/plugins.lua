@@ -96,17 +96,47 @@ require("lazy").setup({
                         },
                     },
                 },
-                {
-                    "hrsh7th/nvim-cmp",
-                    dependencies = {
-                        "hrsh7th/cmp-nvim-lsp",
-                        "hrsh7th/cmp-buffer",
-                        "hrsh7th/cmp-path",
-                        "saadparwaiz1/cmp_luasnip",
-                        "hrsh7th/cmp-nvim-lsp-signature-help",
-                    },
-                },
             },
+        },
+
+        {
+            "hrsh7th/nvim-cmp",
+            event = "InsertEnter",
+            dependencies = {
+                "hrsh7th/cmp-nvim-lsp",
+                "hrsh7th/cmp-buffer",
+                "hrsh7th/cmp-path",
+                "saadparwaiz1/cmp_luasnip",
+                "hrsh7th/cmp-nvim-lsp-signature-help",
+            },
+            opts = function()
+                local cmp = require("cmp")
+                cmp.setup({
+                    snippet = {
+                        expand = function(args)
+                            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+                        end,
+                    },
+                    window = {
+                        completion = cmp.config.window.bordered(),
+                        documentation = cmp.config.window.bordered(),
+                    },
+                    mapping = cmp.mapping.preset.insert({
+                        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+                        ["<C-Space>"] = cmp.mapping.complete(),
+                        ["<C-e>"] = cmp.mapping.abort(),
+                        ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                    }),
+                    sources = cmp.config.sources({
+                        { name = "nvim_lsp" },
+                        { name = "luasnip" }, -- For luasnip users.
+                        { name = 'nvim_lsp_signature_help' }
+                    }, {
+                        { name = "buffer" },
+                    }),
+                })
+            end
         },
 
         {
@@ -151,6 +181,7 @@ require("lazy").setup({
         {
             "catppuccin/nvim",
             name = "catppuccin",
+            priority = 100,
             opts = {
                 flavour = "macchiato", -- latte, frappe, macchiato, mocha
                 transparent_background = false,
@@ -217,12 +248,19 @@ require("lazy").setup({
         {
             "nvim-treesitter/nvim-treesitter",
             event = { "BufReadPre", "BufNewFile" },
-            opts = {
-                ensure_install = {
-                    "markdown",
-                    "markdown_inline",
-                },
-            },
+            opts = function()
+                require 'nvim-treesitter.configs'.setup {
+                    ensure_install = {
+                        "markdown",
+                        "markdown_inline",
+                    },
+                    auto_install = true,
+                    highlight = {
+                        enable = true,
+                    },
+                }
+                require 'nvim-treesitter.install'.compilers = { 'clang' }
+            end
         },
 
         {
@@ -262,7 +300,15 @@ require("lazy").setup({
 
         {
             "windwp/nvim-autopairs",
-            opts = {}
+            event = "InsertEnter",
+            opts = function()
+                local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+                local cmp = require("cmp")
+                cmp.event:on(
+                    'confirm_done',
+                    cmp_autopairs.on_confirm_done()
+                )
+            end
         },
 
         {
@@ -316,7 +362,7 @@ require("lazy").setup({
 
         {
             "LhKipp/nvim-nu",
-            event = { "BufReadPre *.nu", "BufNewFile *.nu" },
+            ft = "nu",
             build = ":TSInstall nu",
             opts = {},
         },
@@ -333,7 +379,6 @@ require("lazy").setup({
 })
 
 -- Tresitter setup
-require 'nvim-treesitter.install'.compilers = { 'clang' }
 
 -- Wilder setup
 local wilder = require('wilder')
