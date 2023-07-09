@@ -5,6 +5,7 @@ require("lazy").setup({
 
         {
             "tpope/vim-commentary",
+            event = "VeryLazy",
         },
 
         {
@@ -228,6 +229,7 @@ require("lazy").setup({
 
         {
             "ThePrimeagen/harpoon",
+            event = "VeryLazy",
             dependencies = {
                 "nvim-lua/plenary.nvim",
             },
@@ -288,11 +290,13 @@ require("lazy").setup({
 
         {
             'norcalli/nvim-colorizer.lua',
+            event = "VeryLazy",
             opts = {}
         },
 
         {
             "gelguy/wilder.nvim",
+            event = "VeryLazy",
             opts = {
                 modes = { ':', '/', '?' }
             }
@@ -324,7 +328,8 @@ require("lazy").setup({
 
         {
             "folke/zen-mode.nvim",
-            opts = {}
+            cmd = "ZenMode",
+            opts = {},
         },
 
         {
@@ -335,6 +340,7 @@ require("lazy").setup({
 
         {
             "andweeb/presence.nvim",
+            event = "VeryLazy",
             opts = {
                 -- General options
                 auto_update         = true,                       -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
@@ -369,6 +375,7 @@ require("lazy").setup({
 
         {
             "rhysd/conflict-marker.vim",
+            event = "VeryLazy",
         }
     },
 
