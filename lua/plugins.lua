@@ -376,7 +376,7 @@ require("lazy").setup({
         {
             "rhysd/conflict-marker.vim",
             event = "VeryLazy",
-        }
+        },
     },
 
     ui = {
