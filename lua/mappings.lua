@@ -71,6 +71,9 @@ map("n", "<leader>k", "<cmd>Lspsaga peek_definition<CR>", { desc = "Show definit
 map("n", "<leader>c", "<cmd>Lspsaga code_action<CR>", { desc = "Display available code actions LspSaga" })
 map("n", "<leader>r", "<cmd>Lspsaga rename<CR>", { desc = "Rename hovered word using LspSaga" })
 map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { desc = "Show buffer outline using LspSaga" })
+map("n", "<leader>;", "<cmd>Lspsaga incoming_calls<CR>", { desc = "Show incoming calls of hovered symbol using LspSaga" })
+map("n", "<leader>'", "<cmd>Lspsaga outgoing_calls<CR>", { desc = "Show outgoing calls of hovered symbol using LspSaga" })
+map("n", "<c-d>", "<cmd>Lspsaga term_toggle<CR>", { desc = "Toggle floating terminal using LspSaga" })
 
 -- Trouble
 map("n", "<leader>t", "<cmd>TroubleToggle<CR>", { desc = "List all diagnostics using Trouble" })
