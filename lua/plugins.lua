@@ -290,12 +290,6 @@ require("lazy").setup({
         },
 
         {
-            'norcalli/nvim-colorizer.lua',
-            event = "VeryLazy",
-            opts = {}
-        },
-
-        {
             "gelguy/wilder.nvim",
             event = "VeryLazy",
             opts = {
@@ -331,12 +325,6 @@ require("lazy").setup({
             "folke/zen-mode.nvim",
             cmd = "ZenMode",
             opts = {},
-        },
-
-        {
-            "brenoprata10/nvim-highlight-colors",
-            event = { "BufReadPre", "BufNewFile" },
-            opts = {}
         },
 
         {
