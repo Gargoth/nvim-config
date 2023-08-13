@@ -78,6 +78,10 @@ map("n", "<a-d>", "<cmd>Lspsaga term_toggle<CR>", { desc = "Toggle floating term
 -- Trouble
 map("n", "<leader>d", "<cmd>TroubleToggle<CR>", { desc = "List all diagnostics using Trouble" })
 
+-- Todo
+map("n", "<leader>t", "<cmd>TodoTrouble<CR>", { desc = "Find all TODO comments using Trouble"})
+map("n", "<leader>T", "<cmd>TodoTelescope<CR>", { desc = "Find all TODO comments using Telescope"})
+
 -- navbuddy
 map(
     "n",
