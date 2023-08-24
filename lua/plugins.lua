@@ -127,7 +127,7 @@ require("lazy").setup({
                         ["<C-f>"] = cmp.mapping.scroll_docs(4),
                         ["<C-Space>"] = cmp.mapping.complete(),
                         ["<C-e>"] = cmp.mapping.abort(),
-                        ["<tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                        ["<tab>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                     }),
                     sources = cmp.config.sources({
                         { name = "nvim_lsp" },
@@ -260,6 +260,7 @@ require("lazy").setup({
                     auto_install = true,
                     highlight = {
                         enable = true,
+                        disable = {"latex"},
                     },
                 }
                 require 'nvim-treesitter.install'.compilers = { 'clang' }
@@ -284,6 +285,7 @@ require("lazy").setup({
                 end,
             },
             opts = {
+                enable_autosnippets = true,
                 history = true,
                 delete_check_events = "TextChanged",
             },
@@ -338,6 +340,21 @@ require("lazy").setup({
             "rhysd/conflict-marker.vim",
             event = "VeryLazy",
         },
+
+        {
+            "lervag/vimtex",
+            ft = "tex",
+            config = function()
+                if vim.fn.has("wsl") then
+                    vim.g.vimtex_view_general_viewer = 'wslview'
+                else
+                    vim.g.vimtex_view_method = 'zathura'
+                end
+
+                vim.g.vimtex_compiler_method = 'tectonic'
+                vim.g.vimtex_compiler_options = '--shell-escape'
+            end,
+        }
     },
 
     ui = {
@@ -346,7 +363,8 @@ require("lazy").setup({
     }
 })
 
--- Tresitter setup
+-- Luasnip Setup
+require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/snippets/"})
 
 -- Wilder setup
 local wilder = require('wilder')

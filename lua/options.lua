@@ -20,5 +20,6 @@ opt.incsearch = true
 opt.encoding = "utf8"
 opt.tgc = true
 opt.signcolumn = "yes"
+opt.conceallevel = 2
 
 vim.g.markdown_fenced_languages = {'html', 'python', 'ruby', 'vim'}

@@ -1,6 +1,6 @@
 -- Set Options
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
 local function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
@@ -79,8 +79,8 @@ map("n", "<a-d>", "<cmd>Lspsaga term_toggle<CR>", { desc = "Toggle floating term
 map("n", "<leader>d", "<cmd>TroubleToggle<CR>", { desc = "List all diagnostics using Trouble" })
 
 -- Todo
-map("n", "<leader>t", "<cmd>TodoTrouble<CR>", { desc = "Find all TODO comments using Trouble"})
-map("n", "<leader>T", "<cmd>TodoTelescope<CR>", { desc = "Find all TODO comments using Telescope"})
+map("n", "<leader>t", "<cmd>TodoTrouble<CR>", { desc = "Find all TODO comments using Trouble" })
+map("n", "<leader>T", "<cmd>TodoTelescope<CR>", { desc = "Find all TODO comments using Telescope" })
 
 -- navbuddy
 map(
@@ -93,5 +93,23 @@ map(
 -- Zenmode
 map("n", "<leader>z", "<cmd>ZenMode<CR>", { desc = "Toggle Zenmode" })
 
--- Markdown
-map("v", "gb", "c****<esc>hP", { desc = "Format current selection to bold" })
+-- Vimtex
+map("n", "<leader>q", "<cmd>VimtexView<CR>", { desc = "Open current file with Vimtex View" })
+
+-- Luasnips
+vim.cmd [[
+" press <Tab> to expand or jump in a snippet. These can also be mapped separately
+" via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+" -1 for jumping backwards.
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+]]
+
+-- Filetype specific
+if vim.bo.filetype == 'tex' then
+elseif vim.bo.filetype == 'markdown' then
+else
+end
