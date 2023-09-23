@@ -352,7 +352,7 @@ require("lazy").setup({
                 end
 
                 vim.g.vimtex_compiler_method = 'tectonic'
-                vim.g.vimtex_compiler_options = '--shell-escape'
+                vim.g.vimtex_compiler_options = '-Z shell-escape'
             end,
         }
     },

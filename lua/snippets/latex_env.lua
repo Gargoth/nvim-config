@@ -29,8 +29,14 @@ end
 tex_utils.in_tikz = function() -- TikZ picture environment detection
     return tex_utils.in_env('tikzpicture')
 end
-tex_utils.in_axis = function() -- TikZ picture environment detection
+tex_utils.in_axis = function() -- pgfplots axis environment detection
     return tex_utils.in_env('axis')
+end
+tex_utils.in_graph = function() -- Graphviz graph environment detection
+    return tex_utils.in_env('graph')
+end
+tex_utils.in_digraph = function() -- Graphviz digraph environment detection
+    return tex_utils.in_env('digraph')
 end
 
 return {
@@ -441,6 +447,29 @@ return {
         {
             -- Table 3: Advanced Snippet Options
             
+        }
+    ),
+
+    s(
+        {
+            -- Table 1: Snippet Parameters
+            trig = "dot\\",
+            descr = "Add graphviz digraph",
+            filetype = "tex",
+            snippetType = "autosnippet",
+        },
+
+        -- Table 2: Snippet Nodes
+        fmta(
+            [[
+                \digraph{<>}{
+                    <>
+                }
+            ]],
+            { i(1, name), i(2) }
+        ),
+        {
+            -- Table 3: Advanced Snippet Options
         }
     ),
 }

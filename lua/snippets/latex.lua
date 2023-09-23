@@ -29,8 +29,11 @@ end
 tex_utils.in_tikz = function() -- TikZ picture environment detection
     return tex_utils.in_env('tikzpicture')
 end
-tex_utils.in_axis = function() -- TikZ picture environment detection
+tex_utils.in_axis = function() -- pgfplots axis environment detection
     return tex_utils.in_env('axis')
+end
+tex_utils.in_digraph = function() -- Graphviz digraph environment detection
+    return tex_utils.in_env('digraph')
 end
 
 return {
@@ -53,6 +56,7 @@ return {
 
                 \usepackage{graphicx}
                 \graphicspath{ {./images/} }
+                \usepackage[pdf]{graphviz}
 
                 \pgfplotsset{width=10cm,compat=1.9}
 
