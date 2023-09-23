@@ -53,11 +53,16 @@ return {
                 \usepackage[english]{babel}
                 \usepackage[margin=0.7in]{geometry}
                 \usepackage{amssymb, textcomp, gensymb, mathrsfs, amsmath, mathtools, float, listings, lipsum, xcolor, pgfplots, hyperref, etoolbox, multicol, soul}
+<<<<<<< Updated upstream
 
                 \usepackage{graphicx}
                 \graphicspath{ {./images/} }
                 \usepackage[pdf]{graphviz}
 
+||||||| Stash base
+=======
+                \usepackage[pdf]{graphviz}
+>>>>>>> Stashed changes
                 \pgfplotsset{width=10cm,compat=1.9}
 
                 % Makes ceil{x} and floor{x} syntax possible

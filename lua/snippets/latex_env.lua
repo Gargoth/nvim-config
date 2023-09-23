@@ -398,6 +398,7 @@ return {
             -- Table 3: Advanced Snippet Options
         }
     ),
+<<<<<<< Updated upstream
 
     s(
         {
@@ -472,4 +473,30 @@ return {
             -- Table 3: Advanced Snippet Options
         }
     ),
+||||||| Stash base
+=======
+
+    s(
+        {
+            -- Table 1: Snippet Parameters
+            trig = "dot\\",
+            descr = "Add graphviz digraph",
+            filetype = "tex",
+            snippetType = "autosnippet",
+        },
+
+        -- Table 2: Snippet Nodes
+        fmta(
+            [[
+                \digraph{<>}{
+                    <>
+                }
+            ]],
+            { i(1, name), i(2) }
+        ),
+        {
+            -- Table 3: Advanced Snippet Options
+        }
+    ),
+>>>>>>> Stashed changes
 }
