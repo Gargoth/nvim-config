@@ -184,7 +184,7 @@ require("lazy").setup({
             name = "catppuccin",
             priority = 100,
             opts = {
-                flavour = "macchiato", -- latte, frappe, macchiato, mocha
+                flavour = "mocha", -- latte, frappe, macchiato, mocha
                 transparent_background = false,
                 integrations = {
                     gitsigns = true,
