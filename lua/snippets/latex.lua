@@ -50,6 +50,10 @@ return {
                 \usepackage[english]{babel}
                 \usepackage[margin=0.7in]{geometry}
                 \usepackage{amssymb, textcomp, gensymb, mathrsfs, amsmath, mathtools, float, listings, lipsum, xcolor, pgfplots, hyperref, etoolbox, multicol, soul}
+
+                \usepackage{graphicx}
+                \graphicspath{ {./images/} }
+
                 \pgfplotsset{width=10cm,compat=1.9}
 
                 % Makes ceil{x} and floor{x} syntax possible
@@ -513,12 +517,12 @@ return {
                 \definecolor{Sapphire}{HTML}{209fb5}
                 \definecolor{Blue}{HTML}{1e66f5}
                 \definecolor{Lavender}{HTML}{7287fd}
-                \definecolor{Text}{HTML}{4c4f69}
-                \definecolor{Subtext}{HTML}{5c5f77}
+                \definecolor{Text}{HTML}{000000}
+                \definecolor{Subtext}{HTML}{4c4f69}
                 \definecolor{Surface}{HTML}{ccd0da}
-                \definecolor{Base}{HTML}{eff1f5}
-                \definecolor{Mantle}{HTML}{e6e9ef}
-                \definecolor{Crust}{HTML}{dce0e8}
+                \definecolor{Base}{HTML}{ffffff}
+                \definecolor{Mantle}{HTML}{eff1f5}
+                \definecolor{Crust}{HTML}{e6e9ef}
             ]],
             {}
         ),
@@ -962,6 +966,77 @@ return {
         {
             -- Table 3: Advanced Snippet Options
             tex_utils.in_mathzone
+        }
+    ),
+
+    s(
+        {
+            -- Table 1: Snippet Parameters
+            trig = "fig\\",
+            descr = "Insert figure with image and caption",
+            filetype = "tex",
+            snippetType = "autosnippet",
+        },
+
+        -- Table 2: Snippet Nodes
+        fmta(
+            [[
+                \begin{figure}[h]
+                    \centering
+                    \includegraphics[width=<>\textwidth]{<>}
+                    \caption{<>}
+                    \label{fig:<>}
+                \end{figure}
+            ]],
+            { i(1, "Image width"), i(2, "Filename without extension"), i(3, "Caption"), i(4, "Label") }
+        ),
+        {
+            -- Table 3: Advanced Snippet Options
+            
+        }
+    ),
+
+    s(
+        {
+            -- Table 1: Snippet Parameters
+            trig = "href\\",
+            descr = "Add hyperref to label",
+            filetype = "tex",
+            snippetType = "autosnippet",
+        },
+
+        -- Table 2: Snippet Nodes
+        fmta(
+            [[
+                \hyperref[<>]{<>}
+            ]],
+            { i(1, label), i(2, text) }
+        ),
+        {
+            -- Table 3: Advanced Snippet Options
+            
+        }
+    ),
+
+    s(
+        {
+            -- Table 1: Snippet Parameters
+            trig = "inlist\\",
+            descr = "Add inline listing",
+            filetype = "tex",
+            snippetType = "autosnippet",
+        },
+
+        -- Table 2: Snippet Nodes
+        fmta(
+            [[
+                \lstinline[language=<>]{<>}
+            ]],
+            { i(1), i(2) }
+        ),
+        {
+            -- Table 3: Advanced Snippet Options
+            
         }
     ),
 }

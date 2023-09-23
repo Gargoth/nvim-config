@@ -392,4 +392,55 @@ return {
             -- Table 3: Advanced Snippet Options
         }
     ),
+
+    s(
+        {
+            -- Table 1: Snippet Parameters
+            trig = "cb\\",
+            descr = "Add codeblock with minted",
+            filetype = "tex",
+            snippetType = "autosnippet",
+        },
+
+        -- Table 2: Snippet Nodes
+        fmta(
+            [[
+                \begin{minted}{<>}
+                    <>
+                \end{minted}
+            ]],
+            { i(1, "Language"), i(2) }
+        ),
+        {
+            -- Table 3: Advanced Snippet Options
+            
+        }
+    ),
+
+    s(
+        {
+            -- Table 1: Snippet Parameters
+            trig = "labitem\\",
+            descr = "Add section and subsections for answering a Laboratory item",
+            filetype = "tex",
+            snippetType = "autosnippet",
+        },
+
+        -- Table 2: Snippet Nodes
+        fmta(
+            [[
+                \section{Item <>}
+
+                \subsection{Instruction / Problem}
+
+                \subsection{Answer}
+
+            ]],
+            { i(1) }
+        ),
+        {
+            -- Table 3: Advanced Snippet Options
+            
+        }
+    ),
 }
