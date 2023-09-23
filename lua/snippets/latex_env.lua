@@ -398,7 +398,6 @@ return {
             -- Table 3: Advanced Snippet Options
         }
     ),
-<<<<<<< Updated upstream
 
     s(
         {
@@ -473,8 +472,6 @@ return {
             -- Table 3: Advanced Snippet Options
         }
     ),
-||||||| Stash base
-=======
 
     s(
         {
@@ -498,5 +495,4 @@ return {
             -- Table 3: Advanced Snippet Options
         }
     ),
->>>>>>> Stashed changes
 }
