@@ -43,7 +43,7 @@ return {
     s(
         {
             -- Table 1: Snippet Parameters
-            trig = "env",
+            trig = "env\\",
             descr = "Add new LaTeX environment",
             filetype = "tex",
             snippetType = "autosnippet",
