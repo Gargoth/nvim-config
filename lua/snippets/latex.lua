@@ -984,7 +984,7 @@ return {
         -- Table 2: Snippet Nodes
         fmta(
             [[
-                \begin{figure}[h]
+                \begin{figure}[h!]
                     \centering
                     \includegraphics[width=<>\textwidth]{<>}
                     \caption{<>}
@@ -1036,6 +1036,28 @@ return {
                 \lstinline[language=<>]{<>}
             ]],
             { i(1), i(2) }
+        ),
+        {
+            -- Table 3: Advanced Snippet Options
+            
+        }
+    ),
+
+    s(
+        {
+            -- Table 1: Snippet Parameters
+            trig = "autoref\\",
+            descr = "Add autoref to label",
+            filetype = "tex",
+            snippetType = "autosnippet",
+        },
+
+        -- Table 2: Snippet Nodes
+        fmta(
+            [[
+                \autoref{<>}
+            ]],
+            { i(1, "fig:") }
         ),
         {
             -- Table 3: Advanced Snippet Options

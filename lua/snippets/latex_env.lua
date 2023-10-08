@@ -357,10 +357,10 @@ return {
     s(
         {
             -- Table 1: Snippet Parameters
-            trig = "listing",
+            trig = "listing\\",
             descr = "Add new listing (codeblock)",
             filetype = "tex",
-            snippetType = "snippet",
+            snippetType = "autosnippet",
         },
 
         -- Table 2: Snippet Nodes

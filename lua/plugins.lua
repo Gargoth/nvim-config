@@ -28,10 +28,9 @@ require("lazy").setup({
 
         {
             "lukas-reineke/indent-blankline.nvim",
-            event = { "BufReadPre", "BufNewFile" },
-            opts = {},
+            main = "ibl",
+            opts = {}
         },
-
         {
             "folke/todo-comments.nvim",
             event = "VeryLazy",
@@ -260,7 +259,7 @@ require("lazy").setup({
                     auto_install = true,
                     highlight = {
                         enable = true,
-                        disable = {"latex"},
+                        disable = { "latex" },
                     },
                 }
                 require 'nvim-treesitter.install'.compilers = { 'clang' }
@@ -364,7 +363,7 @@ require("lazy").setup({
 })
 
 -- Luasnip Setup
-require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/snippets/"})
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets/" })
 
 -- Wilder setup
 local wilder = require('wilder')
