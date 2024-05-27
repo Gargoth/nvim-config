@@ -14,6 +14,10 @@ return {
           end
         end)
       end,
+
+      arduino = function(_, opts)
+        require("lspconfig").arduino_language_server.setup({})
+      end,
     },
   },
 }
