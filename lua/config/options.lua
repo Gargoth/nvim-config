@@ -12,3 +12,5 @@ bo.tabstop = TAB_WIDTH
 bo.shiftwidth = TAB_WIDTH
 bo.expandtab = true
 g.autoformat = false
+vim.g.autoformat = false
+vim.opt.clipboard = ""
