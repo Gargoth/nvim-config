@@ -1,6 +1,11 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    diagnostics = {
+        underline = true,
+        update_in_insert = false,
+        virtual_text = false,
+    },
     setup = {
       svelte = function(_, opts)
         LazyVim.lsp.on_attach(function(client, buffer)
