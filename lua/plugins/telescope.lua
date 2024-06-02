@@ -90,8 +90,8 @@ return {
         end,
         desc = "Goto Symbol (Workspace)",
       },
-      { "<leader>f[", "<cmd>Telescope lsp_incoming_calls<CR>", { enable_preview = true }, desc = "Incoming calls" },
-      { "<leader>f]", "<cmd>Telescope lsp_outgoing_calls<CR>", { enable_preview = true }, desc = "Outgoing calls" },
+      { "<leader>f]", "<cmd>Telescope lsp_incoming_calls<CR>", { enable_preview = true }, desc = "Incoming calls" },
+      { "<leader>f[", "<cmd>Telescope lsp_outgoing_calls<CR>", { enable_preview = true }, desc = "Outgoing calls" },
       { "<leader>fk", "<cmd>Telescope lsp_document_symbols<CR>", { enable_preview = true }, desc = "Document symbols" },
     },
     opts = function()
