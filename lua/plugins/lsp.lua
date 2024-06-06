@@ -2,9 +2,9 @@ return {
   "neovim/nvim-lspconfig",
   opts = {
     diagnostics = {
-        underline = true,
-        update_in_insert = false,
-        virtual_text = false,
+      underline = true,
+      update_in_insert = false,
+      virtual_text = false,
     },
     setup = {
       svelte = function(_, opts)
@@ -18,10 +18,6 @@ return {
             })
           end
         end)
-      end,
-
-      arduino = function(_, opts)
-        require("lspconfig").arduino_language_server.setup({})
       end,
     },
   },
