@@ -196,7 +196,21 @@ return {
           end,
         },
       }
+
+      -- show line diagnostics automatically in hover window
+      vim.o.updatetime = 100
+      vim.api.nvim_create_autocmd({ 'cursorhold', 'cursorholdi' }, {
+        group = vim.api.nvim_create_augroup('float_diagnostic', { clear = true }),
+        callback = function()
+          vim.diagnostic.open_float(nil, { focus = false })
+        end,
+      })
     end,
+
+    -- Disable virtual text
+    vim.diagnostic.config {
+      virtual_text = false,
+    },
   },
 }
 -- vim: ts=2 sts=2 sw=2 et

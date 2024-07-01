@@ -13,7 +13,7 @@ vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = ''
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -53,5 +53,12 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+local TAB_WIDTH = 4
+
+vim.bo.tabstop = TAB_WIDTH
+vim.bo.shiftwidth = TAB_WIDTH
+vim.bo.expandtab = true
+vim.g.autoformat = false
 
 -- vim: ts=2 sts=2 sw=2 et
