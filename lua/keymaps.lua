@@ -30,7 +30,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -42,5 +41,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Lazy
 vim.keymap.set('n', '<leader>l', ':Lazy<CR>', { desc = 'Toggle Lazy' })
+
+-- LSP
+vim.keymap.set('n', '<leader>Li', ':LspInfo<CR>', { desc = '[L]sp [I]nfo' })
+vim.keymap.set('n', '<leader>Lr', ':LspRestart<CR>', { desc = '[L]sp [R]estart' })
+vim.keymap.set('n', '<leader>Ls', ':LspStart<CR>', { desc = '[L]sp [S]tart' })
+vim.keymap.set('n', '<leader>LS', ':LspStop<CR>', { desc = '[L]sp [S]top' })
+vim.keymap.set('n', '<leader>Ll', ':LspLog<CR>', { desc = '[L]sp [L]og' })
 
 -- vim: ts=2 sts=2 sw=2 et
