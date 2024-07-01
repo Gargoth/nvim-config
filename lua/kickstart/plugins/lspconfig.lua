@@ -181,6 +181,8 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'ruff_lsp', -- Fast LSP
+        'pyright', -- Completions, gd, ...
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -196,6 +198,9 @@ return {
           end,
         },
       }
+
+      -- Source all *.lua files under lua/custom/lsp for lsp configurations
+      vim.cmd 'runtime! lua/custom/lsp/*.lua'
 
       -- show line diagnostics automatically in hover window
       vim.o.updatetime = 100

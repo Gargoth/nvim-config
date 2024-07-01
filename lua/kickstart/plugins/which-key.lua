@@ -29,6 +29,7 @@ return {
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>z'] = { name = '[Z] Folds', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
+        ['<leader>L'] = { name = '[L]SP', _ = 'which_key_ignore' },
       }
       -- visual mode
       require('which-key').register({
