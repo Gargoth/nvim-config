@@ -61,4 +61,8 @@ vim.bo.shiftwidth = TAB_WIDTH
 vim.bo.expandtab = true
 vim.g.autoformat = false
 
+-- No wrap and linebreak as default
+vim.o.wrap = false
+vim.o.linebreak = false
+
 -- vim: ts=2 sts=2 sw=2 et

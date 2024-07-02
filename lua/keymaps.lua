@@ -83,7 +83,27 @@ end
 
 vim.keymap.set('n', '<leader>td', toggle_diagnostics, { desc = '[T]oggle [D]iagnostics' })
 
--- TODO: Conceal [tc]
--- TODO: Word wrap [tw]
+-- Toggles conceallevel between 0 and 2
+vim.keymap.set('n', '<leader>tc', function()
+  if vim.o.conceallevel ~= 0 then
+    vim.o.conceallevel = 0
+  else
+    vim.o.conceallevel = 2
+  end
+end, { desc = '[T]oggle [C]onceal' })
+
+-- State that handles toggling of wrap and linebreak
+local wrap_active = false
+
+-- Toggles wrap and linebreak based on current value of wrap_active
+vim.keymap.set('n', '<leader>tw', function()
+  if vim.o.wrap then
+    vim.o.wrap = false
+    vim.o.linebreak = false
+  else
+    vim.o.wrap = true
+    vim.o.linebreak = true
+  end
+end, { desc = '[T]oggle [W]rap' })
 
 -- vim: ts=2 sts=2 sw=2 et
