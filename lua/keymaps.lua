@@ -39,14 +39,51 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Lazy
-vim.keymap.set('n', '<leader>l', ':Lazy<CR>', { desc = 'Toggle Lazy' })
-
--- LSP
+-- [[ LSP Keymapping ]]
 vim.keymap.set('n', '<leader>Li', ':LspInfo<CR>', { desc = '[L]sp [I]nfo' })
 vim.keymap.set('n', '<leader>Lr', ':LspRestart<CR>', { desc = '[L]sp [R]estart' })
 vim.keymap.set('n', '<leader>Ls', ':LspStart<CR>', { desc = '[L]sp [S]tart' })
 vim.keymap.set('n', '<leader>LS', ':LspStop<CR>', { desc = '[L]sp [S]top' })
 vim.keymap.set('n', '<leader>Ll', ':LspLog<CR>', { desc = '[L]sp [L]og' })
+
+-- [[ lazy.nvim ]]
+-- NOTE: This is technically misplaced since it is not pure vim, rather relying on lazy.nvim being installed
+vim.keymap.set('n', '<leader>l', ':Lazy<CR>', { desc = 'Toggle Lazy' })
+
+-- [[ Toggle Keymaps ]]
+
+-- Diagnostics
+
+-- Creates autocommand for showing line diagnostics automatically in hover window
+local create_hoverdiag_au = function()
+  vim.o.updatetime = 500
+  vim.api.nvim_create_autocmd({ 'cursorhold', 'cursorholdi' }, {
+    group = vim.api.nvim_create_augroup('float_diagnostic', { clear = true }),
+    callback = function()
+      vim.diagnostic.open_float(nil, { focus = false })
+    end,
+  })
+end
+
+-- State that handles toggling of diagnostics
+local diagnostics_active = true
+create_hoverdiag_au()
+
+-- Inverts `diagnostics_active` and handles hover diagnostics autocommand
+local toggle_diagnostics = function()
+  diagnostics_active = not diagnostics_active
+  if diagnostics_active then
+    vim.diagnostic.show()
+    create_hoverdiag_au()
+  else
+    vim.diagnostic.hide()
+    vim.api.nvim_del_augroup_by_name 'float_diagnostic'
+  end
+end
+
+vim.keymap.set('n', '<leader>td', toggle_diagnostics, { desc = '[T]oggle [D]iagnostics' })
+
+-- TODO: Conceal [tc]
+-- TODO: Word wrap [tw]
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -201,15 +201,6 @@ return {
 
       -- Source all *.lua files under lua/custom/lsp for lsp configurations
       vim.cmd 'runtime! lua/custom/lsp/*.lua'
-
-      -- show line diagnostics automatically in hover window
-      vim.o.updatetime = 100
-      vim.api.nvim_create_autocmd({ 'cursorhold', 'cursorholdi' }, {
-        group = vim.api.nvim_create_augroup('float_diagnostic', { clear = true }),
-        callback = function()
-          vim.diagnostic.open_float(nil, { focus = false })
-        end,
-      })
     end,
 
     -- Disable virtual text
