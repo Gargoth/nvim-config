@@ -28,7 +28,7 @@ return {
         ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>z'] = { name = '[Z] Folds', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
+        ['<leader>u'] = { name = '[U]I', _ = 'which_key_ignore' },
         ['<leader>L'] = { name = '[L]SP', _ = 'which_key_ignore' },
       }
       -- visual mode

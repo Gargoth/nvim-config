@@ -89,20 +89,20 @@ local toggle_diagnostics = function()
   print('Toggled diagnostics to', diagnostics_active)
 end
 
-vim.keymap.set('n', '<leader>td', toggle_diagnostics, { desc = '[T]oggle [D]iagnostics' })
+vim.keymap.set('n', '<leader>ud', toggle_diagnostics, { desc = 'Toggle [D]iagnostics' })
 
 -- Toggles conceallevel between 0 and 2
-vim.keymap.set('n', '<leader>tc', function()
+vim.keymap.set('n', '<leader>uc', function()
   if vim.o.conceallevel ~= 0 then
     vim.o.conceallevel = 0
   else
     vim.o.conceallevel = 2
   end
   print('Toggled conceal level to', vim.o.conceallevel)
-end, { desc = '[T]oggle [C]onceal' })
+end, { desc = 'Toggle [C]onceal' })
 
 -- Toggles wrap and linebreak based on current value of vim.o.wrap
-vim.keymap.set('n', '<leader>tw', function()
+vim.keymap.set('n', '<leader>uw', function()
   if vim.o.wrap then
     vim.o.wrap = false
     vim.o.linebreak = false
@@ -111,6 +111,6 @@ vim.keymap.set('n', '<leader>tw', function()
     vim.o.linebreak = true
   end
   print('Toggled text wrapping to', vim.o.wrap)
-end, { desc = '[T]oggle [W]rap' })
+end, { desc = 'Toggle [W]rap' })
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -12,13 +12,13 @@ return {
         desc = '[C]ode [F]ormat buffer',
       },
       {
-        '<leader>tf',
+        '<leader>uf',
         function()
           vim.g.autoformat = not vim.g.autoformat
           print('Autoformat on save toggled to', vim.g.autoformat)
         end,
         mode = '',
-        desc = '[T]oggle Auto[f]ormat on Save',
+        desc = 'Toggle Auto[f]ormat on Save',
       },
     },
     opts = {
