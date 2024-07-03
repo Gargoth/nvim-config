@@ -32,7 +32,7 @@ return {
     },
     lsp = {
       auto_attach = true,
-      preference = { 'ruff_lsp', 'pyright', 'ruff', 'svelte', 'vtsls', 'tsserver', 'tailwindcss' },
+      preference = { 'ruff_lsp', 'basedpyright', 'pyright', 'ruff', 'svelte', 'vtsls', 'tsserver', 'tailwindcss' },
     },
     highlight = true,
     separator = ' > ',

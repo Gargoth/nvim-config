@@ -1,4 +1,4 @@
-require('lspconfig').pyright.setup {
+require('lspconfig').basedpyright.setup {
   settings = {
     pyright = {
       disableOrganizeImports = true, -- Using Ruff

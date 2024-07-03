@@ -182,7 +182,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'ruff_lsp', -- Fast LSP
-        'pyright', -- Completions, gd, ...
+        'basedpyright', -- Completions, gd, ...
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
