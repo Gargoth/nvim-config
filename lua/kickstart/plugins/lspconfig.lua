@@ -183,9 +183,12 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-        'ruff_lsp', -- Fast LSP
-        'basedpyright', -- Completions, gd, ...
+        'lua_ls', -- Lua LSP
+        'stylua', -- Lua formatter
+        'ruff_lsp', -- Fast LSP for python for python
+        'basedpyright', -- Completions and remaining LSP features for python
+        'marksman', -- Markdown LSP
+        'prettierd', -- General formatter (currently used for markdown)
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
