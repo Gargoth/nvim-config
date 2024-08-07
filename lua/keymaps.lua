@@ -9,7 +9,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>`', '<C-6>', { desc = 'Go to previous (alternate) buffer' })
 
 -- Yank Buffer
-vim.keymap.set('n', '<leader>yy', ':%y"+<CR>', { desc = 'Yank entire file'})
+vim.keymap.set('n', '<leader>yy', ':%y+<CR>', { desc = 'Yank entire file'})
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', function()
