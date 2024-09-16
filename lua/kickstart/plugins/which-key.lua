@@ -18,24 +18,37 @@ return {
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
+      local wk = require 'which-key'
+      wk.setup()
 
       -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-        ['<leader>z'] = { name = '[Z] Folds', _ = 'which_key_ignore' },
-        ['<leader>u'] = { name = '[U]I', _ = 'which_key_ignore' },
-        ['<leader>L'] = { name = '[L]SP', _ = 'which_key_ignore' },
-        ['<leader>x'] = { name = '[x] Trouble', _ = 'which_key_ignore' },
+      wk.add {
+        {
+
+          { '<leader>L', group = '[L]SP' },
+          { '<leader>L_', hidden = true },
+          { '<leader>c', group = '[C]ode' },
+          { '<leader>c_', hidden = true },
+          { '<leader>d', group = '[D]ocument' },
+          { '<leader>d_', hidden = true },
+          { '<leader>s', group = '[S]earch' },
+          { '<leader>s_', hidden = true },
+          { '<leader>u', group = '[U]I' },
+          { '<leader>u_', hidden = true },
+          { '<leader>w', group = '[W]orkspace' },
+          { '<leader>w_', hidden = true },
+          { '<leader>x', group = '[x] Trouble' },
+          { '<leader>x_', hidden = true },
+          { '<leader>z', group = '[Z] Folds' },
+          { '<leader>z_', hidden = true },
+        },
+        -- visual mode
+        {
+          mode = { 'v' }, -- NORMAL and VISUAL mode
+          { '<leader>h', group = 'Git [H]unk' },
+          { '<leader>h_', hidden = true },
+        },
       }
-      -- visual mode
-      require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
-      }, { mode = 'v' })
     end,
   },
 }
