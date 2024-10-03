@@ -1,11 +1,13 @@
 require('lspconfig').basedpyright.setup {
+  enabled = true,
   settings = {
-    pyright = {
-      disableOrganizeImports = true, -- Using Ruff
-    },
-    python = {
+    disableOrganizeImports = true, -- Using ruff
+    basedpyright = {
       analysis = {
-        ignore = { '*' }, -- Using Ruff
+        -- ignore = { "*" },
+        typeCheckingMode = 'standard',
+        diagnosticMode = 'openFilesOnly',
+        useLibraryCodeForTypes = true,
       },
     },
   },
