@@ -9,6 +9,9 @@ return {
         if vim.fn.has 'win32' == 1  then
           return "pwsh"
         else
+          if vim.fn.executable("fish") == 1 then
+            return "fish"
+          end
           return vim.o.shell
         end
       end
