@@ -185,7 +185,7 @@ return {
       vim.list_extend(ensure_installed, {
         'lua_ls', -- Lua LSP
         'stylua', -- Lua formatter
-        'ruff_lsp', -- Fast LSP for python for python
+        'ruff', -- Fast LSP for python for python
         'basedpyright', -- Completions and remaining LSP features for python
         'marksman', -- Markdown LSP
         'prettierd', -- General formatter (currently used for markdown)
