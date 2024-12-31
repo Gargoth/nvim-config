@@ -17,5 +17,12 @@ require 'lazy-bootstrap'
 -- [[ Configure and install plugins ]]
 require 'lazy-plugins'
 
+-- [[ Configure colorscheme ]]
+local colorscheme_map = {
+  ["catppuccin"] = "catppuccin-mocha",
+  ["gruvbox"] = "gruvbox"
+}
+vim.cmd.colorscheme(colorscheme_map[vim.env.current_theme])
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
