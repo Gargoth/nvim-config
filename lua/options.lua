@@ -66,4 +66,8 @@ vim.g.autoformat = false
 vim.o.wrap = false
 vim.o.linebreak = false
 
+-- Disable netrw in favor of nvim tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- vim: ts=2 sts=2 sw=2 et
