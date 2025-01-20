@@ -54,11 +54,12 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-local TAB_WIDTH = 4
+-- NOTE: Handled by vim-sleuth
+-- local TAB_WIDTH = 4
+-- vim.bo.tabstop = TAB_WIDTH
+-- vim.bo.shiftwidth = TAB_WIDTH
+-- vim.bo.expandtab = true
 
-vim.bo.tabstop = TAB_WIDTH
-vim.bo.shiftwidth = TAB_WIDTH
-vim.bo.expandtab = true
 vim.g.autoformat = false
 
 -- No wrap and linebreak as default
