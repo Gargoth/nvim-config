@@ -41,6 +41,7 @@ return {
         lua = { 'stylua' },
         markdown = { 'prettierd', 'prettier' },
         yaml = { 'prettierd', 'prettier' },
+        gd = { 'gdscript' }
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
